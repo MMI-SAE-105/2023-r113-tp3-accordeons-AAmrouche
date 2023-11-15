@@ -12,6 +12,11 @@
 
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style> 
+ .ouvert{
+  color:tomato
+ }
+  </style>
   <body>
     <h1>Accordéon avec <code>x-collapse</code></h1>
     <div class="accordeon" x-data="{
@@ -19,7 +24,7 @@
      }">
 
      <section>
-       <button @click=" Button = 1 "> 
+       <button :class="{ouvert:Button===1}"  @click=" Button = 1"> 
          bouton 1 </button>
        <p x-show="Button === 1"
         x-collapse>
@@ -27,7 +32,7 @@
      </section>
 
      <section>
-       <button @click=" Button = 2 ">
+       <button :class="{ouvert:Button===2}" @click=" Button = 2 ">
          bouton 2</button>
        <p x-show="Button === 2"
           x-collapse>
@@ -35,7 +40,7 @@
      </section>
 
      <section>
-       <button @click=" Button = 3 "> 
+       <button :class="{ouvert:Button===3}" @click=" Button = 3 "> 
          bouton 3</button>
        <p x-show="Button === 3"
           x-collapse >Porro voluptatum, mollitia voluptate, perspiciatis doloribus corporis exercitationem qui omnis necessitatibus recusandae illum ipsa eum sequi dignissimos ad ut earum repudiandae quia architecto? Officia suscipit vitae, veniam corrupti natus similique!</p>
