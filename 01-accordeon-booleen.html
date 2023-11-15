@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{ButtonIsOpen: false}">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordéon avec des booléens</title>
   </head>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <body>
     <h1>Accordéon avec des booléens</h1>
+    <div class="accordeon">
+
+      <section x-data="ButtonIsOpen: false">
+        <button @click="ButtonIsOpen = ! ButtonIsOpen"> 
+          bouton 1 </button>
+        
+        <p x-show="ButtonIsOpen">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum sequi error culpa eligendi quam dignissimos quia aliquid similique, velit quod adipisci tempore, nobis itaque excepturi, magni nemo harum placeat corrupti.</p>
+      </section>
+
+      <section x-data="ButtonIsOpen: false">
+        <button @click="ButtonIsOpen = ! ButtonIsOpen">
+          bouton 2</button>
+        <px show="ButtonIsOpen"> Distinctio officia tempore autem debitis quidem. Amet veniam, vel et omnis veritatis beatae suscipit. Quis, quia adipisci vero repellendus voluptatibus excepturi, nisi ut a, molestias corrupti quam obcaecati deleniti aperiam.</p>
+      </section>
+
+      
+      <section>
+        <button>bouton 3</button>
+        <p>Necessitatibus, dolores quos excepturi voluptas ea, labore unde perferendis mollitia atque, fuga soluta quod nihil nulla ipsum nemo sit laudantium minus placeat dolorum eum! Eaque id consequuntur tenetur iste ipsa?</p>
+      </section>
+    </div>
+
   </body>
+
 </html>
