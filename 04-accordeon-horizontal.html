@@ -5,6 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordéon horizontal</title>
+    <style> 
+
+ul#accordeon  { 
+  display: flex;
+  margin:0;
+  padding:0;  
+}
+ul#accordeon li {
+width: 100px;
+overflow: hidden; 
+transition: width 0.5s;
+background-color: #eee;
+list-style-type: none;
+margin: 5px;
+padding: 5px;
+border-radius: 5px;
+
+}
+ul#accordeon li.actif { 
+  width: 317px;
+}
+ul#accordeon li figure {
+display: flex;
+padding: 0px;
+margin: 0;
+width: 317px
+;
+}
+ul#accordeon li figure img {
+  width: 100px;
+  height: 100px;
+}
+ul#accordeon li figure figcaption {
+width: 200px;
+padding: 15px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}  
+ul#accordeon li figure figcaption  {
+margin: 0;
+padding: 5;
+}
+    </style>
+
+
+
   </head>
   <body>
     <h1>Accordéon horizontal</h1>
@@ -29,7 +76,7 @@
           </figcaption>
         </figure>
       </li>
-      
+
       <li>
         <figure>
           <img src="https://picsum.photos/100?random=3" alt="" width="102">
@@ -40,6 +87,6 @@
         </figure>
       </li>
     </ul>
-
+  
   </body>
 </html>
