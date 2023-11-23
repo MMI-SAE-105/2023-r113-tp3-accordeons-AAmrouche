@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onglets</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
     <h1>Onglets</h1>
@@ -20,17 +21,17 @@
     
     </div>
     <div>
-      <div role="tabpanel" x-show="ouvre === 1">
+      <div role="tabpanel" :class="{actif:ouvre === 1,}" @click="ouvre=1">
         <h1>Panneau 1</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti molestias harum, nulla doloremque minima reiciendis facere beatae provident sunt dolor fugit hic soluta. Laboriosam qui error eligendi eos ut?</p>
       </div>
       
-      <div role="tabpanel" x-show="ouvre === 2">
+      <div role="tabpanel" :class="{actif:ouvre === 2,}" @click="ouvre=2">
         <h1>Panneau 2</h1>
         <p>Cumque, modi mollitia? Et est perferendis dolores possimus excepturi dicta, nulla perspiciatis qui tempora in optio enim quod expedita numquam veniam obcaecati, harum at! Omnis officiis illum deleniti dicta doloremque?</p>
       </div>
 
-      <div role="tabpanel" x-show="ouvre === 3">
+      <div role="tabpanel" :class="{actif:ouvre === 3,}" @click="ouvre=3">
         <h1>Panneau 3</h1>
         <p>Quos quae ipsam, dolor voluptates eligendi omnis quam odit molestiae non, nisi magnam amet quasi et vitae! Assumenda odit suscipit vero. Assumenda quod ea, eaque animi voluptatum ab nobis et?</p>
       </div>
