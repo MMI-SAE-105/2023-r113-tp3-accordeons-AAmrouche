@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onglets</title>
+   
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     
 
@@ -12,19 +13,19 @@
 
 #onglets div{ 
 
-  position: relative;
+  position: absolute;
   height: 200px;
   width: 200px;
 }
 
-div[role="tabpanel"] > * {
-  position: absolute;
+#onglets div> * {
+  position: relative;
   opacity: 0;
+  
 }
-[role="tabpanel"] .actif {
+[role="tabpanel"].actif {
   opacity: 1;
 }
-
 
 
 </style>
@@ -40,12 +41,12 @@ div[role="tabpanel"] > * {
 
     <div id="onglets" x-data="{ ouvre : 1 }">
   <ul role="tablist">
-    <li :class="{actif: ouvre === 1}" role="tab" @click="ouvre=1">Onglet 1</li>
-    <li :class="{actif: ouvre === 2}" role="tab" @click="ouvre=2">Onglet 2</li>
-    <li :class="{actif: ouvre === 3}" role="tab" @click="ouvre=3">Onglet 3</li>
+    <li  role="tab" @click="ouvre=1">Onglet 1</li>
+    <li  role="tab" @click="ouvre=2">Onglet 2</li>
+    <li  role="tab" @click="ouvre=3">Onglet 3</li>
   </ul>
     
-    </div>
+    
     <div>
       <div role="tabpanel" :class="{actif:ouvre === 1,}">
         <h1>Panneau 1</h1>
@@ -62,6 +63,6 @@ div[role="tabpanel"] > * {
         <p>Quos quae ipsam, dolor voluptates eligendi omnis quam odit molestiae non, nisi magnam amet quasi et vitae! Assumenda odit suscipit vero. Assumenda quod ea, eaque animi voluptatum ab nobis et?</p>
       </div>
     </div>
-
+  </div>
   </body>
 </html>
