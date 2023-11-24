@@ -11,20 +11,29 @@
 
 <style>
 
-#onglets div{ 
+.onglets_parent{ 
 
-  position: absolute;
+  position: relative;
   height: 200px;
   width: 200px;
 }
 
-#onglets div> * {
-  position: relative;
+.onglets_parent>div {
+  position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
-  
+  transition: opacity 0.5s ease-in-out;
 }
-[role=tabpanel].actif {
+
+.onglets_parent>div.actif {
   opacity: 1;
+
+}
+
+[role=tab].actif {
+  color: blueviolet;
+  background-color: grey;
 }
 
 
@@ -41,13 +50,13 @@
 
     <div id="onglets" x-data="{ ouvre : 1 }">
   <ul role="tablist">
-    <li  role="tab" @click="ouvre=1 ">Onglet 1</li>
-    <li  role="tab" @click="ouvre=2 ">Onglet 2</li>
-    <li  role="tab" @click="ouvre=3 ">Onglet 3</li>
+    <li  role="tab" @click="ouvre=1 "  :class="{actif:ouvre === 1,}">Onglet 1</li>
+    <li  role="tab" @click="ouvre=2 "  :class="{actif:ouvre === 2,}">Onglet 2</li>
+    <li  role="tab" @click="ouvre=3 "  :class="{actif:ouvre === 3,}">Onglet 3</li>
   </ul>
     
     
-    <div>
+    <div class="onglets_parent">
       <div role="tabpanel" :class="{actif:ouvre === 1,}">
         <h1>Panneau 1</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti molestias harum, nulla doloremque minima reiciendis facere beatae provident sunt dolor fugit hic soluta. Laboriosam qui error eligendi eos ut?</p>
